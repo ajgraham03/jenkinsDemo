@@ -28,5 +28,21 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
+
+        stage('Test') {
+            when {
+                expression { params.SKIP_TESTS == false }
+            }
+            steps {
+                dir('java-app') {
+                    sh 'mvn test -B'
+                }
+            }
+            post {
+                always {
+                    junit 'java-app/target/surefire-reports/*.xml'
+                }
+            }
+        }
     }
 }
