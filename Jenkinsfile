@@ -63,9 +63,7 @@ pipeline {
         }
 
         stage('Build Docker Image') {
-            when {
-                expression { params.BUILD_DOCKER == true }
-            }
+
             steps {
 
                     sh '''
