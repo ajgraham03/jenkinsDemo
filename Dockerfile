@@ -36,7 +36,7 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
  
 # Copy the JAR from builder stage
 
-COPY --from=builder /app/target/calculator-app-*.jar app.jar
+COPY --from=builder /app/target/CalculatorApp-*.jar app.jar
  
 # Change ownership to non-root user
 
@@ -56,5 +56,5 @@ LABEL description="Calculator Demo Application for Jenkins CI/CD"
  
 # Run the application
 
-ENTRYPOINT ["java", "-jar", "CalculatorApp-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
  
