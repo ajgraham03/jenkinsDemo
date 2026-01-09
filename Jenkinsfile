@@ -34,13 +34,11 @@ pipeline {
 //                 expression { params.SKIP_TESTS == false }
 //             }
             steps {
-                dir('CalculatorApp') {
                     sh 'mvn test'
-                }
             }
             post {
                 always {
-                    junit 'CalculatorApp/target/surefire-reports/*.xml'
+                    junit 'target/surefire-reports/*.xml'
                 }
             }
         }
