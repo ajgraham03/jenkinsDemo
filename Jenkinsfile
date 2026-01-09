@@ -30,9 +30,7 @@ pipeline {
         }
 
         stage('Test') {
-            when {
-                expression { params.SKIP_TESTS == true }
-            }
+
             steps {
                     sh 'mvn test'
             }
@@ -41,6 +39,12 @@ pipeline {
                     junit 'target/surefire-reports/*.xml'
                 }
             }
+        }
+
+        stage('Package') {
+            steps {
+                    sh 'mvn package -DskipTests -B'
+                }
         }
     }
 }
