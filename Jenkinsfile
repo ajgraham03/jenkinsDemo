@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-    APP_NAME = 'jenkinsdemo-jenkins'
+    APP_NAME = 'calculator-app'
     DOCKER_IMAGE = "${APP_NAME}"
     DOCKER_TAG = "${BUILD_NUMBER}"
     }
