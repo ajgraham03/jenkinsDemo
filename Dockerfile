@@ -4,7 +4,7 @@
  
 # Stage 1: Build stage with Maven
 
-FROM maven:3.9-eclipse-temurin-17-alpine AS builder
+FROM --platform=linux/amd64 maven:3.9-eclipse-temurin-17-alpine AS builder
  
 WORKDIR /app
  
@@ -26,7 +26,7 @@ RUN mvn clean package -B
  
 # Stage 2: Runtime stage with JRE only
 
-FROM --platform=linux/amd64 eclipse-temurin:17-jre-alpine
+FROM eclipse-temurin:17-jre-alpine
  
 WORKDIR /app
  
