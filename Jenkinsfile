@@ -79,7 +79,7 @@ pipeline {
         stage('Archive Artifacts') {
             steps {
                 archiveArtifacts(
-                    artifacts: 'java-app/target/*.jar',
+                    artifacts: 'target/*.jar',
                     fingerprint: true
                 )
             }
