@@ -97,5 +97,22 @@ pipeline {
                 sh 'echo "Deploying..."'
             }
         }
+
+        post {
+            always {
+                echo "Result: ${currentBuild.currentResult}"
+            }
+            success {
+                echo 'Pipeline succeeded!'
+            }
+            failure {
+                echo 'Pipeline failed!'
+            }
+            cleanup {
+                cleanWs()
+            }
+        }
+
+
     }
 }
