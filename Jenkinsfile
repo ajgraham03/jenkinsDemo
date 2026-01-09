@@ -35,7 +35,7 @@ pipeline {
 //             }
             steps {
                 dir('java-app') {
-                    sh 'mvn test -B'
+                    sh 'mvn test'
                 }
             }
             post {
