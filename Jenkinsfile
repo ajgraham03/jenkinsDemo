@@ -84,5 +84,18 @@ pipeline {
                 )
             }
         }
+
+        stage('Deploy') {
+//             when {
+//                 allOf {
+//                     expression { params.ENVIRONMENT == 'prod' }
+//                     expression { currentBuild.currentResult == 'SUCCESS' }
+//                 }
+//             }
+            steps {
+                input message: 'Deploy to production?', ok: 'Deploy'
+                sh 'echo "Deploying..."'
+            }
+        }
     }
 }
