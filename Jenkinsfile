@@ -34,7 +34,7 @@ pipeline {
 //                 expression { params.SKIP_TESTS == false }
 //             }
             steps {
-                dir('java-app') {
+                dir('CalculatorApp') {
                     sh 'mvn test'
                 }
             }
