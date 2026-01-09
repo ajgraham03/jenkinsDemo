@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+    APP_NAME = 'CalculatorApp'
+    }
+
     tools {
             maven 'MVN3'  // Configure this in Jenkins Global Tool Configuration
         }
