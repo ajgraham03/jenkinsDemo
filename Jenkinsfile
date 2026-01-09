@@ -46,5 +46,20 @@ pipeline {
                     sh 'mvn package -DskipTests -B'
                 }
         }
+
+        stage('Code Quality') {
+            parallel {
+                stage('Lint Check') {
+                    steps {
+                        echo 'Running linter...'
+                    }
+                }
+                stage('Security Scan') {
+                    steps {
+                        echo 'Running security scan...'
+                    }
+                }
+            }
+        }
     }
 }
