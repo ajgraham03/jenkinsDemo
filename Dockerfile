@@ -56,5 +56,5 @@ LABEL description="Calculator Demo Application for Jenkins CI/CD"
  
 # Run the application
 
-ENTRYPOINT ["java", "-jar", "/app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
  
