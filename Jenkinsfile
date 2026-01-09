@@ -5,9 +5,23 @@ pipeline {
             maven 'MVN3'  // Configure this in Jenkins Global Tool Configuration
         }
     stages {
+        stage('Initialize') {
+            steps {
+                echo "Application: ${APP_NAME}"
+                echo "Build Number: ${BUILD_NUMBER}"
+            }
+        }
+
+        stage('Checkout') {
+            steps {
+                // checkout scm  // For Git-based projects
+                sh 'ls -la'
+            }
+        }
+
         stage('Build') {
             steps {
-                sh 'mvn compile'
+                sh 'mvn clean compile'
             }
         }
     }
