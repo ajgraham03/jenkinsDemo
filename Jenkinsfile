@@ -30,9 +30,9 @@ pipeline {
         }
 
         stage('Test') {
-//             when {
-//                 expression { params.SKIP_TESTS == false }
-//             }
+            when {
+                expression { params.SKIP_TESTS == false }
+            }
             steps {
                     sh 'mvn test'
             }
