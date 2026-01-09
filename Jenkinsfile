@@ -98,21 +98,21 @@ pipeline {
             }
         }
 
-        post {
-            always {
-                echo "Result: ${currentBuild.currentResult}"
-            }
-            success {
-                echo 'Pipeline succeeded!'
-            }
-            failure {
-                echo 'Pipeline failed!'
-            }
-            cleanup {
-                cleanWs()
-            }
+
+    }
+
+    post {
+        always {
+            echo "Result: ${currentBuild.currentResult}"
         }
-
-
+        success {
+            echo 'Pipeline succeeded!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+        cleanup {
+            cleanWs()
+        }
     }
 }
