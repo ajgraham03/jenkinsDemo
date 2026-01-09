@@ -75,5 +75,14 @@ pipeline {
 
             }
         }
+
+        stage('Archive Artifacts') {
+            steps {
+                archiveArtifacts(
+                    artifacts: 'java-app/target/*.jar',
+                    fingerprint: true
+                )
+            }
+        }
     }
 }
