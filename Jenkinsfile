@@ -3,6 +3,8 @@ pipeline {
 
     environment {
     APP_NAME = 'CalculatorApp'
+    DOCKER_IMAGE = "${APP_NAME}"
+    DOCKER_TAG = "${BUILD_NUMBER}"
     }
 
     tools {
